@@ -1,0 +1,36 @@
+{
+  "name": "amycleary",
+  "version": "0.1.0",
+  "description": "amycleary.com build dependencies",
+  "main": "www/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "harp": "harp server -p 2999",
+    "harp-pid": "ps -ef | grep harp",
+    "harp-kill": "kill $(ps aux | grep '[h]arp' | awk '{print $2}')",
+    "sync": "browser-sync start --proxy localhost:2999 --files public/**/*.js, public/**/*.css, public/**/*.html",
+    "dev": "npm-run-all --parallel harp sync",
+    "clean": "rm -R ./www 2> /dev/null || true",
+    "compile": "harp compile",
+    "build": "npm-run-all --sequential clean compile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timkinnane/amycleary.git"
+  },
+  "keywords": [
+    "design",
+    "UI",
+    "UX",
+    "portfolio"
+  ],
+  "author": "Tim Kinnane",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/timkinnane/amycleary/issues"
+  },
+  "homepage": "https://github.com/timkinnane/amycleary#readme",
+  "devDependencies": {
+    "npm-run-all": "^2.1.1"
+  }
+}
