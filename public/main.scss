@@ -32,12 +32,19 @@ $container-width: 940px;
 // Misc
 $global-radius: 0;
 
+// Theme specific
+$nav-width: 256px;
+$nav-height: 70px;
+$nav-font-size: 18px;
+
 // Modules
 //––––––––––––––––––––––––––––––––––––––––––––––––––
-@import "../scss/imports.scss";
-@import "../scss/globals.scss";
-@import "../scss/navbar.scss";
-@import "../scss/typography.scss";
+
+@import "../scss/imports";
+@import "../scss/globals";
+@import "../scss/navbar";
+@import "../scss/typography";
+@import "../scss/layout";
 
 // Document Styles
 //------------------------------------------------------------

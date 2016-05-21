@@ -1,9 +1,6 @@
 // Mobile first navbar
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-$nav-width: 256px;
-$nav-height: 70px;
-
 // Canvas wraps all content other than nav trigger
 .canvas {
   @extend .u-full-width;
@@ -52,12 +49,12 @@ $nav-height: 70px;
       display: block;
       padding: 0;
       height: $nav-height;
-      line-height: $nav-height;
       border-bottom: 1px solid $border-color;
       background-color: white;
       @include transition( background-color .2s, color .2s );
       &:hover,
-      &:active {
+      &:active,
+      &.active {
         background-color: $secondary-color;
         border-color: $secondary-color;
         color: white;

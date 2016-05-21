@@ -1,0 +1,13 @@
+// Layout
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+main {
+  padding-top: $nav-height;
+}
+.container {
+  position: relative;
+}
+header.site-header {
+  position: absolute;
+  width: 100%;
+}
