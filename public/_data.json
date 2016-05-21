@@ -1,0 +1,28 @@
+{
+  "navbar": {
+    "home": {
+      "href": "/",
+      "title": "Home"
+    },
+    "work": {
+      "href": "/work",
+      "title": "Work"
+    },
+    "profile": {
+      "href": "/profile",
+      "title": "Profile"
+    },
+    "art": {
+      "href": "/art",
+      "title": "Art"
+    },
+    "blog": {
+      "href": "/blog",
+      "title": "Blog"
+    },
+    "tumblr": {
+      "href": "http://www.un-l-t-d.tumblr.com/",
+      "title": "Tumblr"
+    }
+  }
+}
