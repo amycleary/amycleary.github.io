@@ -1,5 +1,37 @@
-// set custom vars before loading libraries
-$font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
-$container-width: 940px;
+// Variables (declare before loading libraries)
+//––––––––––––––––––––––––––––––––––––––––––––––––––
 
+// Breakpoints (match include-media)
+$bp-larger-than-mobile    : "min-width: 320px";
+$bp-larger-than-phablet   : "min-width: 552px";
+$bp-larger-than-tablet    : "min-width: 768px";
+$bp-larger-than-desktop   : "min-width: 1024px";
+$bp-larger-than-desktophd : "min-width: 1200px";
+
+// Colors
+$light-grey: #D2D2D2;
+$body-grey: #979797;
+$dark-grey: #4A4A4A;
+$primary-color: #A0B9B3;
+$secondary-color: #E9E7E7;
+$border-color: $secondary-color;
+$link-color: #A0ABB9;
+$font-color: $body-grey;
+
+// Typography
+$font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+
+// Grid Variables (mostly default)
+$container-width: 940px;
+// $container-width-larger-than-mobile: 85%;
+// $container-width-larger-than-phablet: 80%;
+// $total-columns: 12;
+// $column-width: 100 / $total-columns; // calculates individual column width based off of # of columns
+// $column-margin: 4%; // space between columns
+
+// Misc
+$global-radius: 0;
+
+// Modules
+//––––––––––––––––––––––––––––––––––––––––––––––––––
 @import "../scss/imports.scss";
