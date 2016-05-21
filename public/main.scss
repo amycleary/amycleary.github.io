@@ -35,3 +35,13 @@ $global-radius: 0;
 // Modules
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 @import "../scss/imports.scss";
+@import "../scss/globals.scss";
+@import "../scss/navbar.scss";
+@import "../scss/typography.scss";
+
+// Document Styles
+//------------------------------------------------------------
+body {
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+}

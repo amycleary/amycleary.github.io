@@ -3,9 +3,12 @@ html(lang="en")
   head
     != partial("_meta")
   body
-    .container
-      != partial("_header")
-      != partial("_navbar")
-      main(role="main")
-        != yield
-      != partial("_footer")
+    input.nav-trigger.psuedo-hidden(type="checkbox", id="nav-trigger")
+    label(for="nav-trigger")
+    .canvas
+      .container
+        != partial("_header")
+        != partial("_navbar")
+        main(role="main")
+          != yield
+        != partial("_footer")
