@@ -4,7 +4,7 @@ Codebase for amycleary.com static site, generated with HarpJS.
 
 ## Requirements
 
-Node/npm with globally installed NPM packages
+Node/npm (recommended via [homebrew](http://brew.sh)) with globally installed packages
 
 - [harp](http://harpjs.com/)
 - [bower](http://bower.io/)
@@ -12,9 +12,16 @@ Node/npm with globally installed NPM packages
 
 ## Install
 
-Install node/npm, make dev folder, clone package, install dependencies and run dev build (opens at http://localhost:3000/)
+1. Install node/npm
+1. make dev folder
+1. clone package
+1. install dependencies
+1. run dev build (opens at http://localhost:3000/)
 
 ```
+# deps (optional)
+brew install -g harp bower browser-sync
+# repo & dev
 git clone https://github.com/timkinnane/amycleary.git .
 npm install
 bower install
@@ -33,7 +40,7 @@ Docs for (bower) included SCSS front end libraries
 
 TODO
 
-## Compilation
+## Compiling
 
 TODO
 
