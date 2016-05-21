@@ -36,6 +36,12 @@ Docs for (bower) included SCSS front end libraries
 - [include-media (media queries)](http://include-media.com/)
 - [bourbon (mixins)](http://bourbon.io/)
 
+Docs for template, stylesheet languages
+
+- [harp (content/variables)](http://harpjs.com/docs/)
+- [jade (templates)](http://jade-lang.com/reference/) or [this one](http://naltatis.github.io/jade-syntax-docs)
+- [sass (stylesheets)](http://sass-lang.com/documentation/file.SASS_REFERENCE.html)
+
 ## Content Management
 
 TODO
