@@ -1,0 +1,22 @@
+// Custom components
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.index-banner {
+  box-sizing: border-box;
+  width: 100%;
+  height: 490px;
+  background: $primary-color;
+  color: white;
+  padding: 140px 0;
+  box-sizing: padding-box;
+}
+.squirrel,
+.arrow {
+  margin-bottom: 40px;
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+.squirrel + h2 {
+  margin-bottom: 90px;
+}

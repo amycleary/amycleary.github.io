@@ -45,6 +45,7 @@ $nav-font-size: 18px;
 @import "../scss/navbar";
 @import "../scss/typography";
 @import "../scss/layout";
+@import "../scss/components";
 
 // Document Styles
 //------------------------------------------------------------
@@ -52,3 +53,12 @@ body {
   overflow-x: hidden;
   text-rendering: optimizeLegibility;
 }
+
+// Resets & breakpoint changes
+//------------------------------------------------------------
+$breakpoints: (phone: 320px, tablet: 768px, desktop: 1024px);
+.container { max-width: 100% !important; width: 100%; }
+@include media("<phone") {                .container { width: 100% !important; } }
+@include media(">phone", "<=tablet") {    .container { width: 100% !important; } }
+@include media(">tablet", "<=desktop") {  .container { max-width: 628px !important; } }
+@include media(">desktop") {              .container { max-width: 940px !important; } }
