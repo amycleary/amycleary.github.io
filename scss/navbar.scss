@@ -139,9 +139,6 @@ header.site-header h1.title {
   .container.header {
     @include transition( height, 0.2s );
   }
-  .container.main {
-    @include transition( padding, 0.2s );
-  }
   header.site-header h1.title {
     @include transition( line-height, 0.2s );
   }
@@ -154,9 +151,6 @@ header.site-header h1.title {
   .has-docked-nav {
     .container.header {
       height: $title-height-scroll + $nav-height-scroll;
-    }
-    .container.main {
-      padding-top: $title-height-scroll + $nav-height-scroll;
     }
     header.site-header h1.title {
       line-height: $title-height-scroll - 1px;

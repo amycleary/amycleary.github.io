@@ -28,7 +28,7 @@ $container-width: 940px;
 // $container-width-larger-than-phablet: 80%;
 // $total-columns: 12;
 // $column-width: 100 / $total-columns; // calculates individual column width based off of # of columns
-// $column-margin: 4%; // space between columns
+$column-margin: 2%; // space between columns
 
 // Misc
 $global-radius: 0;
@@ -41,6 +41,7 @@ $title-height-desktop: 170px;
 $nav-height-desktop: 75px;
 $title-height-scroll: 100px;
 $nav-height-scroll: 50px;
+$container-padding: 17px;
 
 // Modules
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -51,6 +52,7 @@ $nav-height-scroll: 50px;
 @import "../scss/typography";
 @import "../scss/layout";
 @import "../scss/components";
+@import "../scss/content";
 
 // Document Styles
 //------------------------------------------------------------

@@ -5,3 +5,21 @@
   position: absolute;
   clip: rect(0, 0, 0, 0);
 }
+
+.u-full-width {
+  display: block;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.columns > a {
+  @extend .u-full-width;
+}
+.columns > img,
+a > img {
+  @extend .u-full-width;
+  @extend .u-max-full-width;
+  margin-bottom: 2rem;
+}

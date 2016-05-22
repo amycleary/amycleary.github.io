@@ -2,7 +2,7 @@ doctype html
 html(lang="en")
   head
     != partial("_meta")
-  body
+  body(class="#{ 'route-' + current.path.join(' route-') }")
     input.nav-trigger.psuedo-hidden(type="checkbox", id="nav-trigger")
     label(for="nav-trigger")
     .canvas
