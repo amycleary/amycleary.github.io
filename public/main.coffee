@@ -6,7 +6,7 @@ $ ->
 
   init = ->
     $window.on('scroll', onScroll)
-    $window.on('resize', resize)
+    # $window.on('resize', resize)
 
   resize = ->
     $body.removeClass('has-docked-nav')
