@@ -8,8 +8,8 @@ html(lang="en")
     .canvas
       .container.header
         != partial("_header")
-      .container.main
         != partial("_navbar")
+      .container.main
         main(role="main")
           != yield
         != partial("_footer")

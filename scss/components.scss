@@ -1,6 +1,7 @@
 // Custom components
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
+// Index banner and banner content
 .index-banner {
   box-sizing: border-box;
   width: 100%;
@@ -8,6 +9,11 @@
   background: $primary-color;
   color: white;
   padding: 125px 0;
+  opacity: 1;
+  @include transition(opacity .6s ease-in);
+}
+.has-docked-nav .index-banner{
+  opacity: 0.4;
 }
 .squirrel,
 .arrow {

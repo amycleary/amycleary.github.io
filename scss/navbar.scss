@@ -14,7 +14,7 @@
 .nav-trigger + label,
 .canvas,
 .navbar {
-    transition: left 0.2s;
+  @include transition( left 0.2s );
 }
 
 // offset canvas and trigger when checked
@@ -52,12 +52,19 @@ label[for="nav-trigger"] {
 .container.main {
   padding-top: $nav-height;
 }
-.site-header h1.title {
+// Header position
+header.site-header {
+  @include position(fixed, 0 null null null);
+  background: white;
+  width: 100%;
+  z-index: 1;
+}
+header.site-header h1.title {
   line-height: $nav-height;
 }
 .navbar {
-  @include position(fixed, 0 0 0 0);
-  width: $nav-width;
+  @include position(fixed, 0 null 0 0);
+  width: $nav-width - 1px;
   z-index: 0;
   border-right: 1px solid $border-color;
   .navbar-list {
@@ -66,7 +73,7 @@ label[for="nav-trigger"] {
     margin: 0;
     li {
       display: block;
-      width: $nav-width;
+      width: $nav-width - 1px;
     }
     li a {
       display: block;
@@ -74,7 +81,6 @@ label[for="nav-trigger"] {
       height: $nav-height;
       line-height: $nav-height;
       border-bottom: 1px solid $border-color;
-      background-color: white;
       @include transition( background-color .2s, color .2s );
       &:hover,
       &:active {
@@ -88,23 +94,29 @@ label[for="nav-trigger"] {
 
 // Put navbar back to normal on desktop
 @include media(">tablet") {
+  .container.header {
+    @include position(fixed, 0 null null 50%);
+    @include transform(translateX(-50%));
+    height: $title-height-desktop + $nav-height-desktop;
+    background: white;
+    z-index: 1;
+  }
   .container.main {
     padding-top: $title-height-desktop + $nav-height-desktop;
+    z-index: 0;
   }
-  .site-header {
+  header.site-header {
     border-bottom: 1px solid $border-color;
   }
-  .site-header h1.title {
-    z-index: 1;
-    line-height: $title-height-desktop;
-    margin-bottom: -1px !important; // offset border
+  header.site-header h1.title {
+    line-height: $title-height-desktop - 1px;
   }
   .nav-trigger ~ .canvas .navbar {
     left: 0;
   }
   .navbar {
-    z-index: 1;
-    @include position(absolute, $title-height-desktop inherit inherit 0);
+    background: white;
+    @include position(fixed, $title-height-desktop inherit inherit 0);
     width: 100%;
     border: 0;
     .navbar-list {
@@ -120,6 +132,41 @@ label[for="nav-trigger"] {
         line-height: $nav-height-desktop;
         border: 0;
       }
+    }
+  }
+  // Resize navbar, title on scroll
+  // .container.
+  .container.header {
+    @include transition( height, 0.2s );
+  }
+  .container.main {
+    @include transition( padding, 0.2s );
+  }
+  header.site-header h1.title {
+    @include transition( line-height, 0.2s );
+  }
+  .navbar {
+    @include transition( top, 0.2s );
+  }
+  .navbar-list li a {
+    @include transition( all, 0.2s );
+  }
+  .has-docked-nav {
+    .container.header {
+      height: $title-height-scroll + $nav-height-scroll;
+    }
+    .container.main {
+      padding-top: $title-height-scroll + $nav-height-scroll;
+    }
+    header.site-header h1.title {
+      line-height: $title-height-scroll - 1px;
+    }
+    .navbar {
+      top: $title-height-scroll;
+    }
+    .navbar-list li a {
+      height: $nav-height-scroll;
+      line-height: $nav-height-scroll;
     }
   }
 }

@@ -7,10 +7,3 @@
 @include media(">phone", "<=tablet") {    .container { width: 100% !important; } }
 @include media(">tablet", "<=desktop") {  .container { max-width: 628px !important; } }
 @include media(">desktop") {              .container { max-width: 940px !important; } }
-
-// Header position
-header.site-header {
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
