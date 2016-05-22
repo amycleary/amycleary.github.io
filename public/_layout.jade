@@ -6,8 +6,9 @@ html(lang="en")
     input.nav-trigger.psuedo-hidden(type="checkbox", id="nav-trigger")
     label(for="nav-trigger")
     .canvas
-      .container
+      .container.header
         != partial("_header")
+      .container.main
         != partial("_navbar")
         main(role="main")
           != yield

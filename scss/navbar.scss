@@ -31,7 +31,30 @@
   left: 0;
 }
 
-// Style the navbar
+// Style the nav trigger
+label[for="nav-trigger"] {
+  @include position(fixed, 25px null null 25px);
+  z-index: 2;
+  height: $nav-height - 50px;
+  width: $nav-height - 50px;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' fill='#{ $secondary-color }' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><rect width='30' height='6'/><rect y='24' width='30' height='6'/><rect y='12' width='30' height='6'/></svg>");
+  background-size: contain;
+}
+// Hide trigger on desktop
+@include media(">tablet") {
+  label[for="nav-trigger"] {
+    display: none;
+  }
+}
+
+// Style the navbar and title
+.container.main {
+  padding-top: $nav-height;
+}
+.site-header h1.title {
+  line-height: $nav-height;
+}
 .navbar {
   @include position(fixed, 0 0 0 0);
   width: $nav-width;
@@ -49,12 +72,12 @@
       display: block;
       padding: 0;
       height: $nav-height;
+      line-height: $nav-height;
       border-bottom: 1px solid $border-color;
       background-color: white;
       @include transition( background-color .2s, color .2s );
       &:hover,
-      &:active,
-      &.active {
+      &:active {
         background-color: $secondary-color;
         border-color: $secondary-color;
         color: white;
@@ -63,15 +86,40 @@
   }
 }
 
-// Style the nav trigger
-label[for="nav-trigger"] {
-  @include position(fixed, 25px null null 25px);
-  z-index: 2;
-  height: $nav-height - 50px;
-  width: $nav-height - 50px;
-  cursor: pointer;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' fill='#{ $secondary-color }' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><rect width='30' height='6'/><rect y='24' width='30' height='6'/><rect y='12' width='30' height='6'/></svg>");
-  background-size: contain;
+// Put navbar back to normal on desktop
+@include media(">tablet") {
+  .container.main {
+    padding-top: $title-height-desktop + $nav-height-desktop;
+  }
+  .site-header {
+    border-bottom: 1px solid $border-color;
+  }
+  .site-header h1.title {
+    z-index: 1;
+    line-height: $title-height-desktop;
+    margin-bottom: -1px !important; // offset border
+  }
+  .nav-trigger ~ .canvas .navbar {
+    left: 0;
+  }
+  .navbar {
+    z-index: 1;
+    @include position(absolute, $title-height-desktop inherit inherit 0);
+    width: 100%;
+    border: 0;
+    .navbar-list {
+      display: table;
+      max-width: 500px;
+      margin: 0 auto;
+      li {
+        display: table-cell;
+      }
+      li a {
+        font-size: 11px;
+        height: $nav-height-desktop;
+        line-height: $nav-height-desktop;
+        border: 0;
+      }
+    }
+  }
 }
-
-// @include transform(translateY(50px));

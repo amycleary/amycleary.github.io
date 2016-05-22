@@ -1,13 +1,16 @@
 // Layout
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-main {
-  padding-top: $nav-height;
-}
-.container {
-  position: relative;
-}
+// Resets & breakpoint changes
+.container { max-width: 100% !important; width: 100%; }
+@include media("<phone") {                .container { width: 100% !important; } }
+@include media(">phone", "<=tablet") {    .container { width: 100% !important; } }
+@include media(">tablet", "<=desktop") {  .container { max-width: 628px !important; } }
+@include media(">desktop") {              .container { max-width: 940px !important; } }
+
+// Header position
 header.site-header {
   position: absolute;
+  top: 0;
   width: 100%;
 }

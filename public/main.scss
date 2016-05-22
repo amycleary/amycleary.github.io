@@ -1,7 +1,8 @@
 // Variables (declare before loading libraries)
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-// Breakpoints (match include-media)
+// Breakpoints (for both bourbon and include-media)
+$breakpoints: (phone: 320px, tablet: 768px, desktop: 1024px);
 $bp-larger-than-mobile    : "min-width: 320px";
 $bp-larger-than-phablet   : "min-width: 552px";
 $bp-larger-than-tablet    : "min-width: 768px";
@@ -36,6 +37,10 @@ $global-radius: 0;
 $nav-width: 256px;
 $nav-height: 70px;
 $nav-font-size: 18px;
+$title-height-desktop: 170px;
+$nav-height-desktop: 75px;
+$title-height-scroll: 100px;
+$nav-height-scroll: 50px;
 
 // Modules
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -53,12 +58,3 @@ body {
   overflow-x: hidden;
   text-rendering: optimizeLegibility;
 }
-
-// Resets & breakpoint changes
-//------------------------------------------------------------
-$breakpoints: (phone: 320px, tablet: 768px, desktop: 1024px);
-.container { max-width: 100% !important; width: 100%; }
-@include media("<phone") {                .container { width: 100% !important; } }
-@include media(">phone", "<=tablet") {    .container { width: 100% !important; } }
-@include media(">tablet", "<=desktop") {  .container { max-width: 628px !important; } }
-@include media(">desktop") {              .container { max-width: 940px !important; } }
