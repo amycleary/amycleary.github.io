@@ -1,15 +1,19 @@
 doctype html
 html(lang="en")
   head
-    != partial("_meta")
+    != partial("_partials/meta")
   body(class="#{ 'route-' + current.path.join(' route-') }")
     input.nav-trigger.psuedo-hidden(type="checkbox", id="nav-trigger")
     label(for="nav-trigger")
     .canvas
-      .container.header
-        != partial("_header")
-        != partial("_navbar")
-      .container.main
-        main(role="main")
-          != yield
-        != partial("_footer")
+      header(role="banner").container.header
+        != partial("_partials/header")
+        != partial("_partials/navbar")
+      main(role="main").container.main
+        != partial("_partials/banner")
+        != yield
+      footer(role="aside").container.footer
+        != partial("_partials/footer")
+    script(src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js")
+    script(src="/main.js")

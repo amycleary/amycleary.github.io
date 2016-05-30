@@ -1,5 +1,0 @@
-nav.navbar(role="navigation")
-  ul.navbar-list
-    for item, id in public._data.navbar
-      li.navbar-item
-        a(id=id, href=item.href, class="#{ current.source == id ? 'active' : '' }") #{ item.title }

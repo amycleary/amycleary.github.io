@@ -1,0 +1,5 @@
+nav.navbar(role="navigation")
+  ul.navbar-list
+    for title, href in public._data.navbar
+      li.navbar-item
+        a(href=href, class="#{ current.source == href ? 'active' : '' }") #{ title }

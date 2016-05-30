@@ -1,8 +1,8 @@
 // Custom components
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-// Index banner and banner content
-.banner {
+// "banner" and banner content
+article > header {
   box-sizing: border-box;
   width: 100%;
   background: $primary-color;
@@ -13,10 +13,10 @@
   margin-bottom: 60px;
 }
 @include media(">tablet") {
-  .banner {
+  article > header {
     margin-bottom: 80px;
   }
-  .has-docked-nav .banner{
+  .has-docked-nav article > header {
     opacity: 0.4;
   }
 }
@@ -37,17 +37,16 @@
 }
 
 // Articles
+footer.footer,
 article {
   padding: 0 $container-padding;
-}
-@include media(">tablet") {
-  article {
+  @include media(">tablet") {
     padding: 0;
   }
 }
 
 // Give header shadow, hidden until docked
-.container.header:after {
+header.header:after {
   content: '';
   display: block;
   position: absolute;
@@ -58,30 +57,38 @@ article {
   border-radius: 80%;
   box-shadow: 0 10px 15px -8px rgba(20,20,20,0);
 }
-.has-docked-nav .container.header:after {
+.has-docked-nav header.header:after {
   background-color: rgba(20, 20, 20, 0);
   box-shadow: 0 10px 15px -8px rgba(20,20,20,0.15)
 }
 
 // Footer links and attribution
-.main > footer {
+footer.footer {
   border-top: 1px solid $light-grey;
   border-bottom: 1px solid $light-grey;
   margin-bottom: 8rem;
-  height: 80px;
   p.attribution {
     line-height: 80px;
     text-transform: uppercase;
     font-size: 1.5rem;
     font-weight: 200;
     margin: 0;
-    text-align: right;
+    text-align: center;
+    @include media(">tablet") {
+      text-align: right;
+    }
     a {
       text-decoration: none;
     }
   }
   .social {
-    margin-top: 16px;
+    @include display(flex);
+    @include justify-content(center);
+    margin-top: 32px;
+    @include media(">phone") {
+      display: block;
+      margin-top: 16px !important;
+    }
     a.icon {
       display: block;
       width: 48px;
@@ -103,3 +110,9 @@ article {
     }
   }
 }
+
+// Dynamic row wrapping
+.row.row-wrap[data-cols="1"] > .columns:nth-child(1n+2) { margin-left: 0; }
+.row.row-wrap[data-cols="2"] > .columns:nth-child(2n+3) { margin-left: 0; }
+.row.row-wrap[data-cols="3"] > .columns:nth-child(3n+4) { margin-left: 0; }
+.row.row-wrap[data-cols="4"] > .columns:nth-child(4n+5) { margin-left: 0; }

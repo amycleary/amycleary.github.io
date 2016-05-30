@@ -17,18 +17,20 @@
   @include transition( left 0.2s );
 }
 
-// offset canvas and trigger when checked
-.nav-trigger:checked + label {
-  left: $nav-width + 25px;
-}
-.nav-trigger:checked ~ .canvas {
-  left: $nav-width;
-}
-.nav-trigger ~ .canvas .navbar {
-  left: -$nav-width;
-}
-.nav-trigger:checked ~ .canvas .navbar {
-  left: 0;
+// offset canvas and trigger when checked (mobile only to be safe)
+@include media("<=tablet") {
+  .nav-trigger:checked + label {
+    left: $nav-width + 25px;
+  }
+  .nav-trigger:checked ~ .canvas {
+    left: $nav-width;
+  }
+  .nav-trigger ~ .canvas .navbar {
+    left: -$nav-width;
+  }
+  .nav-trigger:checked ~ .canvas .navbar {
+    left: 0;
+  }
 }
 
 // Style the nav trigger
@@ -49,17 +51,17 @@ label[for="nav-trigger"] {
 }
 
 // Style the navbar and title
-.container.main {
+main.main {
   padding-top: $nav-height;
 }
 // Header position
-header.site-header {
+header.header {
   @include position(fixed, 0 null null null);
   background: white;
   width: 100%;
   z-index: 1;
 }
-header.site-header h1.title {
+header.header h1.title {
   line-height: $nav-height;
 }
 .navbar {
@@ -94,21 +96,19 @@ header.site-header h1.title {
 
 // Put navbar back to normal on desktop
 @include media(">tablet") {
-  .container.header {
+  header.header {
     @include position(fixed, 0 null null 50%);
     @include transform(translateX(-50%));
     height: $title-height-desktop + $nav-height-desktop;
     background: white;
     z-index: 1;
   }
-  .container.main {
+  main.main {
     padding-top: $title-height-desktop + $nav-height-desktop;
     z-index: 0;
   }
-  header.site-header {
+  header.header h1.title {
     border-bottom: 1px solid $border-color;
-  }
-  header.site-header h1.title {
     line-height: $title-height-desktop - 1px;
   }
   .nav-trigger ~ .canvas .navbar {
@@ -136,10 +136,10 @@ header.site-header h1.title {
   }
   // Resize navbar, title on scroll
   // .container.
-  .container.header {
+  header.header {
     @include transition( height, 0.2s );
   }
-  header.site-header h1.title {
+  header.header h1.title {
     @include transition( line-height, 0.2s );
   }
   .navbar {
@@ -152,7 +152,7 @@ header.site-header h1.title {
     .container.header {
       height: $title-height-scroll + $nav-height-scroll;
     }
-    header.site-header h1.title {
+    header.header h1.title {
       line-height: $title-height-scroll - 1px;
     }
     .navbar {
