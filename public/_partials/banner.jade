@@ -1,0 +1,10 @@
+if current.source == 'index'
+  header.index
+    .squirrel
+      img(src="img/white-squirrel.png", alt="UI/UX Visual Designer")
+    h2 UI/UX Visual Designer
+    .arrow &darr;
+else
+  - var pageTitle = (current.path.indexOf('work') > -1) ? public._data.pages.work[current.source] : public._data.pages[current.source]
+  header(style="background-image: url('/content/#{ current.source }.png')")
+    h1= pageTitle

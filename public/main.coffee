@@ -5,10 +5,10 @@ $ ->
   navOffsetTop = $nav.offset().top
 
   init = ->
+    $window.on 'resize', resize
     $window.on 'scroll', onScroll
     $('a[href^="/#"], a[href^="#"]').on 'click', smoothScroll
     # wrapRows()
-    # $window.on('resize', resize)
 
   resize = ->
     $body.removeClass 'has-docked-nav'

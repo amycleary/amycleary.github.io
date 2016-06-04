@@ -10,8 +10,9 @@ html(lang="en")
         != partial("_partials/header")
         != partial("_partials/navbar")
       main(role="main").container.main
-        != partial("_partials/banner")
-        != yield
+        article
+          != partial("_partials/banner")
+          != yield
       footer(role="aside").container.footer
         != partial("_partials/footer")
     script(src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous")

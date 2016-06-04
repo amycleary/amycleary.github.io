@@ -1,21 +1,14 @@
+section
+  :markdown
+    I’m a design thinker. I solve problems and design beautiful experiences, while balancing user needs with business objectives. I create products that are useful. I workshop ideas, collaborate with clients and teams, and tell stories with well executed documentation. Add this to a strong background in visual design and creative arts, and you have yourself a very useful _interdisciplinary_ UXer.
+  h4
+    a(href="mailto:amyclearydesign@gmail.com") get in touch
+footer
+  h3#work Work
 
-article
-  header
-    .squirrel
-      img(src="img/white-squirrel.png", alt="")
-    h2 UI/UX Visual Designer
-    .arrow &darr;
-  section
-    :markdown
-      I’m a design thinker. I solve problems and design beautiful experiences, while balancing user needs with business objectives. I create products that are useful. I workshop ideas, collaborate with clients and teams, and tell stories with well executed documentation. Add this to a strong background in visual design and creative arts, and you have yourself a very useful _interdisciplinary_ UXer.
-    h4
-      a(href="mailto:amyclearydesign@gmail.com") get in touch
-  footer
-    h3#work Work
-
-    .row.row-wrap(data-cols="3")
-      for title, id in public._data.pages.work
-        .four.columns
-          a(href="work/#{ id }")
-            img(src="/content/#{ id }-thumb.png", alt="#{ title }")
-          h5.text-center #{ title }
+  .row.row-wrap(data-cols="3")
+    for title, id in public._data.pages.work
+      .four.columns
+        a(href="work/#{ id }")
+          img(src="/content/#{ id }-thumb.png", alt="#{ title }")
+        h5.text-center #{ title }
