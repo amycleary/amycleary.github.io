@@ -176,7 +176,7 @@ $circle-spacing: 20px;
   }
 }
 
-@include media(">tablet") {
+@include media(">desktop") {
   .circle-steps {
     @include clearfix();
     @include box(horizontal, justify);
