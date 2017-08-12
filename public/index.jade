@@ -4,11 +4,18 @@ section
   h4
     a(href="mailto:amyclearydesign@gmail.com") get in touch
 footer
-  h3#work Work
-
+  h3 User Experience
   .row.row-wrap(data-cols="3")
-    for title, id in public._data.pages.work
+    for title, id in public._data.pages.ux
       .four.columns
-        a(href="work/#{ id }")
+        a(href="ux/#{ id }")
+          img(src="/content/#{ id }-thumb.png", alt="#{ title }")
+        h5.text-center #{ title }
+  
+  h3 Visual Design
+  .row.row-wrap(data-cols="3")
+    for title, id in public._data.pages.vd
+      .four.columns
+        a(href="vd/#{ id }")
           img(src="/content/#{ id }-thumb.png", alt="#{ title }")
         h5.text-center #{ title }

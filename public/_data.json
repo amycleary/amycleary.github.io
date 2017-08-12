@@ -1,7 +1,6 @@
 {
   "navbar": {
-    "/" : "Home",
-    "/#work" : "Work",
+    "/" : "Work",
     "/profile" : "Profile",
     "/art" : "Art",
     "/blog" : "Blog",
@@ -10,13 +9,17 @@
   "pages": {
     "404": "¯\\_(ツ)_/¯",
     "/": "UI/UX Visual Designer",
-    "work" : {
-      "ux": "UX",
-      "ui": "UI",
+    "ux" : {
+      "uxprocess": "UX process",
+      "seeva": "Seeva",
+      "stratachat": "Strat.chat",
+      "grouply": "Grouply",
+      "paperlust": "Parperlust"
+    },
+    "vd" : {
       "identity": "Identity",
       "print": "Print",
-      "promotional": "Promotional",
-      "logos": "Logos"
+      "promotional": "Promotional"
     },
     "profile": "Profile"
   }
