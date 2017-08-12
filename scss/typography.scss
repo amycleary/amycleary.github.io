@@ -51,7 +51,8 @@ h1, h2, h3, h4, h5 {
 h3, h4 {
   margin-bottom: 5rem;
 }
-article > section {
+article > section,
+article > footer {
   h2 {
     color: $dark-grey;
     font-weight: bold;
