@@ -9,18 +9,14 @@
   "pages": {
     "404": "¯\\_(ツ)_/¯",
     "/": "UI/UX Visual Designer",
-    "ux" : {
-      "uxprocess": "UX process",
-      "seeva": "Seeva",
-      "stratachat": "Strat.chat",
-      "grouply": "Grouply",
-      "paperlust": "Parperlust"
-    },
-    "vd" : {
-      "identity": "Identity",
-      "print": "Print",
-      "promotional": "Promotional"
-    },
+    "uxprocess": "UX process",
+    "seeva": "Seeva",
+    "stratachat": "Strata.chat",
+    "grouply": "Grouply",
+    "paperlust": "Paperlust",
+    "identity": "Identity",
+    "print": "Print",
+    "promotional": "Promotional",
     "profile": "Profile"
   }
 }
