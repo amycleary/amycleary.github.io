@@ -2,27 +2,31 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 .navbar-list a,
 header.header h1.title {
-  font-size: 2rem;
-  font-weight: 400;
+  font-size: 2.5rem;
+  font-weight: 100;
   letter-spacing: 4px;
+  margin: 0;
   text-align: center;
   color: $dark-grey;
   a {
+    color: $dark-grey;
     border: none;
+    text-transform: lowercase;
   }
 }
 .navbar-list a {
+  font-weight: 400;
   text-decoration: none;
   text-transform: uppercase;
-}
-header.header h1.title {
-  margin: 0;
 }
 // Banner
 article > header {
   h1 {
-    font-size: 3.5rem;
+    font-weight: 400;
+    font-size: 4.5rem;
+    font-family: "adobe-caslon-pro",serif;
     font-style: italic;
+    text-transform: lowercase;
   }
   h2 {
     font-size: 2.5rem;
@@ -33,6 +37,7 @@ article > header {
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 body {
   font-size: 13px;
+  font-weight: 100;
   line-height: 2.5rem;
 }
 @include media(">tablet") {
@@ -44,28 +49,30 @@ body {
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 2rem;
-  font-weight: 300;
+  font-weight: 400;
   text-align: center;
 }
-h3, h4, h5, h6 {
+h2, h3, h4, h5, h6 {
   text-transform: uppercase;
 }
 h3, h4 {
   margin-bottom: 5rem;
 }
+h2 {
+    margin-top: 5rem;
+}
 article > section,
 article > footer {
   h2 {
     color: $dark-grey;
-    font-weight: bold;
     margin-bottom: 4rem;
   }
   h3, h4, h5 {
     color: $dark-grey;
-    font-weight: 400;
+    font-weight: 100;
   }
 }
-h1 { font-size: 2rem; line-height: 1.2;  letter-spacing: .4rem; }
+h1 { font-size: 2rem; line-height: 1.2; }
 h2 { font-size: 1.9rem; line-height: 1.25; letter-spacing: .4rem; }
 h3 { font-size: 2.2rem; line-height: 1.3;  letter-spacing: .4rem; }
 h4 { font-size: 1.5rem; line-height: 1.3;  letter-spacing: .4rem; }
