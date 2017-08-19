@@ -15,7 +15,8 @@ html(lang="en")
           != yield
       footer(role="aside").container.footer
         != partial("_partials/footer")
-    script(src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous")
+    != partial("_partials/photoswipe")
+    script(src="https://code.jquery.com/jquery-3.2.1.min.js", integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=", crossorigin="anonymous")
     link(rel="stylesheet" href="vendor/photoswipe/photoswipe.css")
     link(rel="stylesheet" href="vendor/photoswipe/default-skin/default-skin.css")
     script(src="vendor/photoswipe/photoswipe.min.js")

@@ -8,6 +8,7 @@ $ ->
     $window.on 'resize', resize
     $window.on 'scroll', onScroll
     $('a[href^="/#"], a[href^="#"]').on 'click', smoothScroll
+    setupGallery()
     # wrapRows()
 
   resize = ->
@@ -29,7 +30,9 @@ $ ->
     $header = $('.site-header')
     $target = $(target)
     console.log target, $target.offset().top
-    $('body').stop().animate { scrollTop: $target.offset().top - $header.height() - 20 }, 500, 'swing', ->
+    $('body').stop().animate
+      scrollTop: $target.offset().top - $header.height() - 20
+    , 500, 'swing', ->
       window.location.hash = target
       $(document).on 'scroll', onScroll
 
@@ -41,20 +44,20 @@ $ ->
       $divs.slice(i, i + 3).wrapAll '<div class=\'row\'></div>'
       i += 3
 
+  setupGallery = ->
+    imgSelector = 'article > section > img'
+    pswpElement = document.querySelectorAll('.pswp')[0]
+    imgElements = document.querySelectorAll imgSelector
+    if imgElements.length
+      items = for img in imgElements
+        src: img.currentSrc
+        w: img.naturalWidth
+        h: img.naturalHeight
+
+      $(imgSelector).css 'cursor', 'pointer'
+      $(imgSelector).on 'click', (event) ->
+        index = $(imgSelector).index event.target
+        new PhotoSwipe pswpElement, PhotoSwipeUI_Default, items, index: index
+        .init()
+
   init()
-
-  # PhotoSwipe setup
-  pswpElement = document.querySelectorAll('.pswp')[0];
-  items = [{
-    src: 'https://placekitten.com/600/400',
-    w: 600,
-    h: 400
-  },{
-    src: 'https://placekitten.com/1200/900',
-    w: 1200,
-    h: 900
-  }]
-  options = { index: 0 }
-  gallery = new PhotoSwipe pswpElement, PhotoSwipeUI_Default, items, options
-
-  gallery.init()
