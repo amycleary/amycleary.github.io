@@ -11,7 +11,8 @@
     "sync": "browser-sync start --proxy localhost:2999 --files public/**/*.js, public/**/*.css, public/**/*.html",
     "dev": "npm-run-all --parallel harp sync",
     "clean": "rm -R ./www 2> /dev/null || true",
-    "compile": "harp compile",
+    "compile": "harp compile public ./html",
+    "deploy": "git subtree push --prefix html origin master",
     "build": "npm-run-all --sequential clean compile"
   },
   "repository": {

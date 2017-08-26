@@ -5,5 +5,5 @@ if current.source == 'index'
     h2 USER EXPERIENCE DESIGNER
     .arrow &darr;
 else
-  header(style="background-image: url('/content/#{ current.source }.png')")
+  header(style="background-image: url('content/#{ current.source }.png')")
     h1= public._data.pages[current.source]

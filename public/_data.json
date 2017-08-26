@@ -1,14 +1,14 @@
 {
   "navbar": {
-    "/" : "Work",
-    "/profile" : "Profile",
-    "/art" : "Art",
-    "/blog" : "Blog",
+    "index.html" : "Work",
+    "profile.html" : "Profile",
+    "art.html" : "Art",
+    "blog.html" : "Blog",
     "http://www.un-l-t-d.tumblr.com/" : "Tumblr"
   },
   "pages": {
     "404": "¯\\_(ツ)_/¯",
-    "/": "UI/UX Visual Designer",
+    "/": "User Experience Designer",
     "uxprocess": "UX process",
     "seeva": "Seeva",
     "stratachat": "Strata.chat",
